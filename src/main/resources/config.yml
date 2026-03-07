@@ -1,0 +1,20 @@
+---
+check: !<de.mcmdev.antivpn.check.CacheAdapter>
+  cache: !<de.mcmdev.antivpn.check.cache.sql.SqlCache>
+    url: 'jdbc:sqlite:cache.db'
+    username: SA
+    password: ''
+  check: !<de.mcmdev.antivpn.check.ProxycheckCheck>
+    apiKey: SOME-API-KEY
+exemption: !<de.mcmdev.antivpn.exemption.PermissionExemption> {}
+lock: !<de.mcmdev.antivpn.lock.SqlLock>
+  url: 'jdbc:sqlite:cache.db'
+  username: SA
+  password: ''
+messages:
+  lockFail: |-
+    <red>You are not allowed to connect using this IP address.</red>
+    <yellow>If you believe this is a mistake, please contact an administrator.</yellow>
+  checkFail: |-
+    <red>Connecting using a VPN or proxy is not allowed.</red>
+    <yellow>If you believe this is a mistake, please contact an administrator.</yellow>
