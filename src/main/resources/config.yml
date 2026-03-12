@@ -1,13 +1,13 @@
 ---
-check: !<de.mcmdev.antivpn.check.CacheAdapter>
-  cache: !<de.mcmdev.antivpn.check.cache.sql.SqlCache>
+check: !<net.chunkful.antivpn.check.CacheAdapter>
+  cache: !<net.chunkful.antivpn.check.cache.sql.SqlCache>
     url: 'jdbc:sqlite:cache.db'
     username: SA
     password: ''
-  check: !<de.mcmdev.antivpn.check.ProxycheckCheck>
+  check: !<net.chunkful.antivpn.check.ProxycheckCheck>
     apiKey: SOME-API-KEY
-exemption: !<de.mcmdev.antivpn.exemption.PermissionExemption> {}
-lock: !<de.mcmdev.antivpn.lock.SqlLock>
+exemption: !<net.chunkful.antivpn.exemption.PermissionExemption> {}
+lock: !<net.chunkful.antivpn.lock.SqlLock>
   url: 'jdbc:sqlite:cache.db'
   username: SA
   password: ''

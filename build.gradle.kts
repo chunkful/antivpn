@@ -11,8 +11,8 @@ plugins {
     alias(libs.plugins.shadow)
 }
 
-group = "de.mcmdev"
-version = "1.0.0"
+group = "net.chunkful"
+version = "2.0.0"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -100,7 +100,7 @@ configurations.testImplementation {
 }
 
 paperPluginYaml {
-    main = "de.mcmdev.antivpn.AntiVpnPlugin"
+    main = "net.chunkful.antivpn.AntiVpnPlugin"
     loader = "xyz.jpenilla.gremlin.runtime.platformsupport.DefaultsPaperPluginLoader"
     apiVersion = "1.21"
     dependencies {
