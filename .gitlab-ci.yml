@@ -1,0 +1,2 @@
+include:
+  - component: "$CI_SERVER_FQDN/gamemode/pipelines/paper-plugin@3"

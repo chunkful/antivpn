@@ -12,10 +12,9 @@ plugins {
 }
 
 group = "net.chunkful"
-version = "2.0.0"
 
 java {
-    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    toolchain.languageVersion = JavaLanguageVersion.of(25)
 }
 
 repositories {
@@ -36,6 +35,8 @@ dependencies {
     runtimeDownload(libs.jackson.databind)
     runtimeDownload(libs.jackson.yaml)
     runtimeDownload(libs.jexl)
+
+    implementation("org.mariadb.jdbc:mariadb-java-client:3.5.7")
 
     testImplementation(libs.httpclient)
     testImplementation("com.h2database:h2:2.4.240")
@@ -62,11 +63,11 @@ tasks {
         archiveClassifier.set("")
     }
     runServer {
-        minecraftVersion("1.21.10")
+        minecraftVersion("26.2")
         jvmArgs("-XX:+AllowEnhancedClassRedefinition")
     }
     compileJava {
-        options.release = 21
+        options.release = 25
     }
     javadoc {
         options.encoding = Charsets.UTF_8.name()
